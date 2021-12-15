@@ -9,17 +9,7 @@ function getClock() {
     
 }
 
-// setTimeout - 인자로 준 ms 만큼 기다렸다가 한번만 실행
+
 getClock();
 setInterval(getClock, 1000);
 
-
-// ## padstart , end
-// "1".padStart(2,"0");
-// '01'
-// "12".padStart(2, "0");
-// '12'
-// "1".padEnd(2,"0");
-// '10'
-// "hello".padStart(20, "x");
-// 'xxxxxxxxxxxxxxxhello'
