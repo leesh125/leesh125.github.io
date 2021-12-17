@@ -48,26 +48,3 @@ const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
 author.innerText = todaysQuote.author;
-
-// Math.random();
-// 0.45536465036411466
-// Math.random();
-// 0.026974571756301247
-// Math.random();
-// 0.8429160889871337
-// Math.random()*10;
-// 9.986210086124139
-// Math.round(1.1)
-// 1
-// Math.round(1.4)
-// 1
-// Math.round(1.8)
-// 2
-// Math.ceil(1.8)
-// 2
-// Math.ceil(1.2)
-// 2
-// Math.floor(1.2)
-// 1
-// Math.floor(1.9)
-// 1
