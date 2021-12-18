@@ -2,10 +2,19 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.getElementById("todo-list");
 
+function paintToDo(newTodo){
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    li.appendChild(span);
+    span.innerText = newTodo;
+    todoList.appendChild(li);
+}
+
 function handleToDoSubmit(event) {
     event.preventDefault(); 
-    const newTodo = todoInput.value();  // 입력한 문자열을 저장
+    const newTodo = todoInput.value;  // 입력한 문자열을 저장
     todoInput.value = ""; 
+    paintToDo(newTodo);
 }
 
 todoForm.addEventListener("submit", handleToDoSubmit);
