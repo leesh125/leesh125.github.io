@@ -17,6 +17,7 @@ function onLoginSubmit(event) { // submit 이벤트가 발생할 때 필요한 �
 function paintGreetings(username) {
     greeting.innerText = `Hello ${username}`; 
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    todoInput.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
