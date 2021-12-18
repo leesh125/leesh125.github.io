@@ -15,6 +15,13 @@ function deleteToDo(event) {
     const li = event.target.parentElement;
     console.log(li.id); // 삭제하기전 해당하는 li의 id(date.now) 얻기
     li.remove();
+    // filter 함수 적용
+    // 삭제한 li의 id가 filter 함수를 통해 반복문을 돌아서
+    // todo 배열에 있는 obj들의 id롸 li.id(삭제버튼이 눌린 id)를 비교
+    // (같지않으면 true => 값을 남김, 같으면 false -> 그값을 삭제(todos 배열을 재정의)
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));  // parseInt의 이유는 li.id는 string이기때문
+    // DOM의 id는 문자열이라고 나와 있었습니다. 즉 우리가 newTodo.id로 number를 넣어주었어도, DOM에선 string으로 형변환
+    saveToDos(); // 다시 저장함
 }
 
 function paintToDo(newTodo){ // newTodo는 이제 객체이다
@@ -56,22 +63,5 @@ if(savedToDos !== null) {
     parsedToDos.forEach(paintToDo);
 }
 
-function sexyFilter(item) {
-    // return true; // 1,2,3,4가 그대로 보존
-    // return false; // 배열에서 1,2,3,4 제외 => 빈배열이 됨
-
-    // item이 3이 아니면 true리턴 => 3은 배열에서 제외 ([1,2,4])
-    return item !== 3;
-}
-
-// filter가 함수를 4번부름(인자가 바뀜(1,2,3,4 순서))
-// filter함수에서 sexyfilter 함수를 실행할때 해당 인자가 true면 그대로 배열에 남고 false면 배열에서 제외
-[1,2,3,4].filter(sexyFilter) 
-
-function aafilter(num) { return num > 2 }
-arr.filter(aafilter) // [3]
-
-
-const todos = [{"text":"asd","id":1639819772729},{"text":"qwe","id":16398}];
-function sexyfilter(todo) { return todo.id !== 1639819772729 }
-todos.filter(sexyfilter) // {text: 'qwe', id: 16398}
+// filter 함수는 새로운 배열을 리턴(적용한 배열은 그대로 남아있음)
+// filter -> 선택옵션
